@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-
+/*
 
 @Controller
 public class EtudiantController {
@@ -33,12 +33,7 @@ public class EtudiantController {
         return etudiantRepository.findAll();
     }
 
-    @QueryMapping
-    public Centre getCentre(@Argument Long id) {
-        return centreRepository.findById(id).orElseThrow(
-                () -> new RuntimeException(String.format("Le centre %s n'existe pas !", id))
-        );
-    }
+
 
     @QueryMapping
     public Etudiant getEtudiant(@Argument Long id) {
@@ -71,30 +66,6 @@ public class EtudiantController {
         return null;
     }
 
-    @MutationMapping
-    public Centre addCentre(@Argument String nom, @Argument String adresse) {
-        Centre centre = new Centre();
-        centre.setNom(nom);
-        centre.setAdresse(adresse);
-        return centreRepository.save(centre);
-    }
 
-    @MutationMapping
-    public Centre updateCentre(@Argument Long id, @Argument String nom, @Argument String adresse) {
-        Centre centre = centreRepository.findById(id).orElseThrow(
-                () -> new RuntimeException(String.format("Le centre %s n'existe pas !", id))
-        );
-        centre.setNom(nom);
-        centre.setAdresse(adresse);
-        return centreRepository.save(centre);
-    }
-
-    @MutationMapping
-    public String deleteCentre(@Argument Long id) {
-        if (centreRepository.existsById(id)) {
-            centreRepository.deleteById(id);
-            return String.format("Le centre %s a été supprimé avec succès !", id);
-        }
-        return String.format("Le centre %s n'existe pas !", id);
-    }
 }
+*/
